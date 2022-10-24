@@ -1,0 +1,66 @@
+---
+dynamicPermalink: false
+permalink: 'news-article.html'
+---
+
+extends /_layout-default
+
+prepend config-block
+  - site.page_name = '荒木 伸夫 フジテレビ「親愛なる僕へ殺意をこめて」への出演が決定しました！'
+  //- - site.description = ''
+  //- - site.keywords = ''
+  //- - site.url = ''
+
+//- append stylesheet-block
+//-   link(rel="stylesheet", href="/assets/styles/page.css")
+
+//- append javascript-block
+//-   script(src="/assets/scripts/page.js")
+
+block content-block
+  include /_header
+  main.l-main
+    include /_childBg
+    .p-page
+      .p-page__inner
+        .p-page__name
+          h2.p-page__nameEn News
+          .p-page__nameJp お知らせ
+        .p-page__body
+          article.p-article
+            h3 荒木 伸夫 フジテレビ「親愛なる僕へ殺意をこめて」への出演が決定しました！
+            .p-article__meta
+              span.c-tag.c-tag--category オンエア情報
+              time(datatime="2022-09-30") 2022.09.30
+            hr
+            ul.p-works
+              li.p-works__item
+                .p-works__inner
+                  .p-works__dtl
+                    span フジテレビ
+                    strong 親愛なる僕へ殺意をこめて
+                    time(datatime="2022-10-05") 2022年10月5日
+            p
+              | 親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。
+              br
+              | 別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。
+              br
+              | 小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+            +picture({
+              path: '/assets/images/',
+              name: 'img-article_001',
+              type: 'jpg',
+              alt: '',
+              width: 800,
+              height: 450,
+              lazy: false
+            })
+          .p-news__pager.p-pager
+            a.p-pager__btnWrap(href="#") 
+              .p-pagerBtn.p-pagerBtn--prev
+              .p-pager__btnWrapTxt 前の記事へ
+            a.p-pagerBtn.p-pagerBtn--back(href="/news.html") お知らせ一覧へ
+            a.p-pager__btnWrap(href="#")
+              .p-pager__btnWrapTxt 次の記事へ
+              .p-pagerBtn.p-pagerBtn--next
+  include /_footer

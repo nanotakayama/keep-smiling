@@ -1,0 +1,50 @@
+@use '../variable/variable' as *;
+@use 'sass:math';
+
+@function size($arguments...) {
+  $default: (
+    vp-from: $camp-width-mobile,
+    vp-to: $camp-width-desktop,
+    from: 14,
+    to: 16,
+    type: clamp,
+  );
+  $arguments: keywords($arguments);
+  $merge: map-merge($default, $arguments);
+
+  $baseViewport: 1vw;
+
+  $slope: math.div(
+      map-get($merge, to) - map-get($merge, from),
+      map-get($merge, vp-to) - map-get($merge, vp-from)
+    ) * 100;
+
+  $sizeIntercept: math.div(
+    map-get($merge, vp-to) * map-get($merge, from) - map-get($merge, vp-from) * map-get($merge, to),
+    map-get($merge, vp-to) - map-get($merge, vp-from)
+  );
+
+  $size: calc(#{$slope} * #{$baseViewport} + #{$sizeIntercept}px);
+
+  @if map-get($merge, type) == clamp {
+    @return clamp(#{map-get($merge, from)}px, #{$size}, #{map-get($merge, to)}px);
+  } @else if map-get($merge, type) == min {
+    @return min(#{map-get($merge, to) * 1px}, #{$size});
+  } @else {
+    @return max(#{map-get($merge, from) * 1px}, #{$size});
+  }
+}
+
+/* Usage Examples/
+.p-text {
+  &--typeClamp {
+    font-size: size($from:16, $to:42);
+  }
+  &--typeMin {
+    font-size: size($from:16, $to:42, $type:min);
+  }
+  &--typeMax {
+    font-size: size($from:16, $to:42, $type:max);
+  }
+}
+*/

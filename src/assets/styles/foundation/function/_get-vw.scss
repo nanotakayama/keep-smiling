@@ -1,0 +1,17 @@
+@use '../variable/variable' as *;
+@use 'sass:math';
+
+@function get_vw($size, $viewport: $camp-width-mobile) {
+  $rate: math.div(100, $viewport);
+  @return $rate * $size * 1vw;
+}
+
+@function get_vwSP($size, $viewport: $camp-width-mobile) {
+  $rate: math.div(100, $viewport);
+  @return $rate * $size * 1vw;
+}
+
+@function get_vwPC($size, $viewport: $camp-width-desktop) {
+  $rate: math.div(100, $viewport);
+  @return $rate * $size * 1vw;
+}

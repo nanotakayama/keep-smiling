@@ -1,0 +1,203 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+.p-sect {
+  position: relative;
+  &--front {
+    margin-top: 96px;
+    @include mq-up(md) {
+      margin-top: 160px;
+    }
+  }
+  &--aboutBox {
+    margin-top: 0;
+    padding-top: 96px;
+    @include mq-up(md) {
+      margin-top: 0;
+      padding-top: 160px;
+    }
+    &:before {
+      content: "";
+      display: block;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: auto;
+      min-height: 128px;
+      padding-top: calc(128px / 738px * 100%); 
+      background-image: img-url("img-bg-txt.svg");
+      position: absolute;
+      z-index: -1;
+      top: 46px;
+      left: -7px;
+      @include mq-up(md) {
+        top: 54px;
+        left: 0;
+        min-height: 212px;
+        padding-top: calc(212px / 1224px * 100%); 
+      }
+    }
+  }
+  &--talentBox {
+    margin-top: 57px;
+    @include mq-up(md) {
+      margin-top: 65px;
+    }
+    &:before {
+      content: "";
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: auto;
+      padding-top: calc(82px / 390px * 100%); 
+      background-image: img-url("bg-talent-head_sp.png");
+      @include mq-up(md) {
+        background-image: img-url("bg-talent-head_pc.png");
+        padding-top: calc(199px / 1224px * 100%);  
+      }
+    }
+    &:after {
+      content: "";
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding-top: calc(100px / 390px * 100%); 
+      background-image: img-url("bg-talent-foot_sp.png");
+      @include mq-up(md) {
+        background-image: img-url("bg-talent-foot_pc.png");
+        padding-top: calc(253px / 1224px * 100%);
+      }
+    }
+    .p-sect__inner {
+      position: relative;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      top: -41px;
+      @include mq-up(md) {
+        top: -96px;
+      }
+    }
+  }
+  &__inner {
+    padding: 0 16px;
+    @include mq-up(md) {
+      padding: 0 40px;
+    }
+    &--newsInner {
+      @include mq-up(md) {
+        display: flex;
+        max-width: 969px;
+        margin: 0 auto;
+        justify-content: space-between;
+      }
+      .p-sect__name {
+        @include mq-up(md) {
+          width: 153px;
+          white-space: nowrap;
+          margin-right: 96px;
+        }
+      }
+    }
+    &--talentDtl {
+      max-width: 969px;
+      margin: 0 auto;
+      .p-sect__name {
+        max-width: 100%;
+      }
+    }
+  }
+  &__news {
+    margin-top: 24px;
+    @include mq-up(md) {
+     margin-top: 48px;
+    }
+  }
+  &__talent {
+    margin-top: 24px;
+    @include mq-up(md) {
+      max-width: 1020px;
+      margin: 0 auto;
+      margin-top: 48px;
+      padding: 0 24px;
+    }
+  }
+  &__name {
+    &--center {
+      text-align: center;
+      .p-sect__nameJp {
+        padding-left: 0;
+      }
+    }
+    + .c-category {
+      margin-top: 24px;
+      margin-bottom: 16px;
+      @include mq-up(md) {
+        margin-top: 40px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+  &__name {
+    @include mq-up(md) {
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+  }
+  &__btn {
+    display: none;
+    @include mq-up(md) {
+      display: flex;
+      margin-top: 40px;
+    }
+    &.c-button {
+      @include mq-up(md) {
+        font-size: 1.4rem;
+        max-width: 153px;
+        height: 40px;
+      }
+      .c-button__txt:before {
+        @include mq-up(md) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+  &__talentBox {
+    background-color: #FDFBF4;
+    margin-bottom: -30px;
+    @include mq-up(md) {
+      margin-bottom: -96px;
+    }
+  }
+  &__nameEn {
+    font-size: 4.0rem;
+    font-weight: $font-weight-bold;
+    line-height: 100%;
+    color: $color-black;
+    @include mq-up(md) {
+      font-size: 5.6rem;
+    }
+  }
+  &__nameJp {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: $font-weight-bold;
+    line-height: 100%;
+    color: $color-black;
+    margin-top: 16px;
+    padding-left: 8px;
+    @include mq-up(md) {
+      font-size: 1.6rem;
+      margin-top: 24px;
+    }
+  }
+}

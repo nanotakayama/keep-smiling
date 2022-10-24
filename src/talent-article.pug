@@ -1,0 +1,226 @@
+---
+dynamicPermalink: false
+permalink: 'talent-article.html'
+---
+
+extends /_layout-default
+
+prepend config-block
+  - site.page_name = '所属タレント'
+  //- - site.description = ''
+  //- - site.keywords = ''
+  //- - site.url = ''
+
+//- append stylesheet-block
+//-   link(rel="stylesheet", href="/assets/styles/page.css")
+
+//- append javascript-block
+//-   script(src="/assets/scripts/page.js")
+
+block content-block
+  include /_header
+  main.l-main
+    include /_childBg
+    .p-page
+      .p-page__title
+        .p-page__inner
+          .p-page__name
+            h2.p-page__nameEn Talent
+            .p-page__nameJp 所属タレント
+      .p-page__prof
+        .p-page__inner
+          .p-page__body.p-page__body--bigSize
+            .p-talentProf
+              .p-talentProf__vis
+                +picture({
+                  path: '/assets/images/',
+                  name: 'img-prof_002',
+                  type: 'jpg',
+                  alt: '',
+                  width: 400,
+                  height: 400,
+                  lazy: false
+                })
+              .p-talentProf__dtl
+                span.p-talentProf__category Artist
+                .p-talentProf__name
+                  h3.p-talentProf__nameJp 荒木 伸夫
+                  .p-talentProf__nameEn NOBUO ARAKI
+                .p-talentProf__share
+                  a.p-talentProf__shareBtn.p-talentProf__shareBtn--twitter(href="#")
+                    i.p-talentProf__shareBtnIcon.c-picIconTwitter-white
+                  a.p-talentProf__shareBtn.p-talentProf__shareBtn--instagram(href="#")
+                    i.p-talentProf__shareBtnIcon.c-picIconInstagram
+                table.p-talentProf__spec
+                  tbody
+                    tr.p-talentProf__specWrap
+                      th.p-talentProf__specHead 生年月日
+                      td.p-talentProf__specDtl 1990年5月5日
+                    tr.p-talentProf__specWrap
+                      th.p-talentProf__specHead 出身地
+                      td.p-talentProf__specDtl 沖縄県
+                    tr.p-talentProf__specWrap
+                      th.p-talentProf__specHead 身長
+                      td.p-talentProf__specDtl 179cm
+                    tr.p-talentProf__specWrap
+                      th.p-talentProf__specHead 特技
+                      td.p-talentProf__specDtl 親譲りの無鉄砲で小供の時から損ばかりしている。
+                    tr.p-talentProf__specWrap
+                      th.p-talentProf__specHead 語学
+                      td.p-talentProf__specDtl 日本語 / フランス語
+      .p-page__info
+        section.p-sect.p-talentSect
+          .p-sect__inner.p-sect__inner--newsInner
+            .p-sect__name
+              h2.p-sect__nameEn News
+              span.p-sect__nameJp お知らせ
+              a.p-sect__btn.c-button.c-button--main.c-button--more(href="/news.html")
+                .c-button__txt MORE
+            .p-sect__news.p-news
+              ul.p-news__list
+                li.p-news__item
+                  a.p-news__inner(href="/news-article.html")
+                    .p-news__vis
+                      +picture({
+                        path: '/assets/images/',
+                        name: 'thum-news_001',
+                        type: 'jpg',
+                        alt: '',
+                        width: 128,
+                        height: 128,
+                        lazy: true
+                      })
+                    .p-news__dtl
+                      h3.p-news__name 山田 涼介 フジテレビ「親愛なる僕へ殺意をこめて」出演
+                      .p-news__meta
+                        span.p-news__category オンエア情報
+                        time.p-news__days(datatime="2022-09-30") 2022.09.30
+                li.p-news__item
+                  a.p-news__inner(href="/news-article.html")
+                    .p-news__vis
+                      +picture({
+                        path: '/assets/images/',
+                        name: 'thum-news_002',
+                        type: 'jpg',
+                        alt: '',
+                        width: 128,
+                        height: 128,
+                        lazy: true
+                      })
+                    .p-news__dtl
+                      h3.p-news__name 山田 涼介 映画「鋼の錬金術師 完結編」出演
+                      .p-news__meta
+                        span.p-news__category オンエア情報
+                        time.p-news__days(datatime="2022-09-30") 2022.09.30
+                li.p-news__item
+                  a.p-news__inner(href="/news-article.html")
+                    .p-news__vis
+                      +picture({
+                        path: '/assets/images/',
+                        name: 'thum-news_003',
+                        type: 'jpg',
+                        alt: '',
+                        width: 128,
+                        height: 128,
+                        lazy: true
+                      })
+                    .p-news__dtl
+                      h3.p-news__name 臨時休業のお知らせ
+                      .p-news__meta
+                        span.p-news__category その他
+                        time.p-news__days(datatime="2022-09-30") 2022.09.30
+              a.p-news__btn.c-button.c-button--main.c-button--more(href="/news.html")
+                .c-button__txt MORE
+        .p-banner.p-talentSect
+          .p-banner__inner.swiper.js-bannerSwiper
+            ul.p-banner__list.swiper-wrapper
+              li.p-banner__item.swiper-slide
+                a(href="#")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-banner_001',
+                    type: 'jpg',
+                    alt: '',
+                    width: 320,
+                    height: 120,
+                    lazy: false
+                  })
+              li.p-banner__item.swiper-slide
+                a(href="#")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-banner_001',
+                    type: 'jpg',
+                    alt: '',
+                    width: 320,
+                    height: 120,
+                    lazy: false
+                  })
+              li.p-banner__item.swiper-slide
+                a(href="#")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-banner_001',
+                    type: 'jpg',
+                    alt: '',
+                    width: 320,
+                    height: 120,
+                    lazy: false
+                  })
+        section.p-sect.p-talentSect
+          .p-sect__inner.p-sect__inner--talentDtl
+            .p-sect__name
+              h2.p-sect__nameEn Works
+              span.p-sect__nameJp 出演実績
+            .c-category
+              ul.c-category__list
+                li.c-category__listItem.is-active すべて
+                li.c-category__listItem TV
+                li.c-category__listItem ラジオ
+                li.c-category__listItem ディスコグラフィー
+                li.c-category__listItem 舞台
+                li.c-category__listItem ミュージカル
+                li.c-category__listItem 広告
+                li.c-category__listItem イベント
+            ul.p-works.p-works--talentDtl
+              li.p-works__item
+                .p-works__inner
+                  .p-works__dtl
+                    span フジテレビ
+                    strong 親愛なる僕へ殺意をこめて
+                    time(datatime="2022-10-05") 2022年10月5日
+              li.p-works__item
+                .p-works__inner
+                  .p-works__dtl
+                    span フジテレビ
+                    strong 親愛なる僕へ殺意をこめて
+                    time(datatime="2022-10-05") 2022年10月5日
+                      | 〜
+                      time(datatime="2022-10-05") 2022年12月5日
+                      |
+                      span 放送
+              li.p-works__item
+                .p-works__inner
+                  .p-works__thum
+                    +picture({
+                      path: '/assets/images/',
+                      name: 'thum-works_001',
+                      type: 'jpg',
+                      alt: '',
+                      width: 149,
+                      height: 128,
+                      lazy: false
+                    })
+                  .p-works__dtl
+                    span 2nd シングル
+                    strong 親愛なる僕へ殺意をこめて
+                    time(datatime="2022-10-05") 2022年10月5日
+                      |
+                      span 発売
+              li.p-works__item
+                .p-works__inner
+                  .p-works__dtl
+                    span フジテレビ
+                    strong 親愛なる僕へ殺意をこめて
+                    time(datatime="2022-10-05") 2022年10月5日
+  include /_footer

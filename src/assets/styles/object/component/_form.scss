@@ -1,0 +1,117 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.c-customCheck {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #999;
+  border-radius: 4px; 
+}
+
+.c-customCheck:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  top: 50%;
+  left: 5px;
+  border-right: 2px solid $pjc-accent-01;
+  border-bottom: 2px solid $pjc-accent-01;
+  content: '';
+  margin-top: -6px;
+  opacity: 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+input[type=checkbox]:checked ~ .c-customCheck:after {
+  display: block;
+  opacity: 1;
+}
+
+.c-formInput {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  padding: 9px 16px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 1.4rem;
+  line-height: 160%;
+  font-weight: $font-weight-regular;
+  color: $pjc-txt-base;
+  background-color: #F6F6F6;
+  &::placeholder {
+    font-size: 1.4rem;
+    color: #999;
+    font-weight: $font-weight-regular;
+  }
+  &--textarea {
+    resize: none;
+    height: 160px;
+    &::-webkit-resizer {
+      display: none;
+    }
+  }
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.c-uploadTxt {
+  font-size: 1.2rem;
+  font-weight: $font-weight-bold;
+  line-height: 160%;
+  color: $pjc-txt-base;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 128px;
+  height: 40px;
+  background-color: #F6F6F6;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .8s cubic-bezier(.19,1,.22,1);
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: img-url("icon-file.svg");
+    background-repeat: no-repeat;
+    margin-right: 4px;
+    transition: all .8s cubic-bezier(.19,1,.22,1);
+  }
+  @include hover {
+    background-color: $pjc-accent-01;
+    color: $color-white;
+    &:before {
+      background-image: img-url("icon-file_white.svg");
+    }
+  }
+}
+
+.c-formUploadTxt {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.4rem;
+  padding-left: 4px;
+  @include mq-up(md) {
+    font-size: 1.6rem;
+    margin-top: 8px;
+  }
+}

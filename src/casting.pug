@@ -1,0 +1,139 @@
+---
+dynamicPermalink: false
+permalink: 'casting.html'
+---
+
+extends /_layout-default
+
+prepend config-block
+  - site.page_name = 'キャスティング'
+  //- - site.description = ''
+  //- - site.keywords = ''
+  //- - site.url = ''
+
+//- append stylesheet-block
+//-   link(rel="stylesheet", href="/assets/styles/page.css")
+
+//- append javascript-block
+//-   script(src="/assets/scripts/page.js")
+
+block content-block
+  include /_header
+  main.l-main
+    include /_childBg
+    .p-page
+      .p-page__title
+        .p-page__inner
+          .p-page__name
+            h2.p-page__nameEn Casting
+            .p-page__nameJp キャスティング
+      .p-page__casting
+        .p-page__inner
+          .p-page__body
+            .p-casting
+              .p-casting__sect
+                h3.p-casting__sectName 各種イベントキャスティング承ります。
+                ul.p-casting__eventList
+                  li.p-casting__eventListItem コンサート
+                  li.p-casting__eventListItem 講演会
+                  li.p-casting__eventListItem トークショー
+                  li.p-casting__eventListItem.p-casting__eventListItem--w100 パネルディスカッション
+                  li.p-casting__eventListItem お笑いライブ
+                  li.p-casting__eventListItem ものまねライブ
+                  li.p-casting__eventListItem マジシャン
+                  li.p-casting__eventListItem 体験教室
+                  li.p-casting__eventListItem ヨガ
+                  li.p-casting__eventListItem MC
+                  li.p-casting__eventListItem.p-casting__eventListItem--more など
+              .p-casting__sect
+                h3.p-casting__sectName キャスティング内容
+                ul.p-casting__contentList
+                  li.p-casting__contentListItem
+                    .p-casting__contentListItemInner
+                      .p-casting__contentListItemCont
+                        i.p-casting__contentListIcon.c-picIconLight
+                        .p-casting__contentListName 企画提案
+                  li.p-casting__contentListItem 
+                    .p-casting__contentListItemInner
+                      .p-casting__contentListItemCont
+                        i.p-casting__contentListIcon.c-picIconPresentation
+                        .p-casting__contentListName 出演者の提案
+                  li.p-casting__contentListItem
+                    .p-casting__contentListItemInner
+                      .p-casting__contentListItemCont
+                        i.p-casting__contentListIcon.c-picIconNegotiation
+                        .p-casting__contentListName 出演者への交渉
+                  li.p-casting__contentListItem
+                    .p-casting__contentListItemInner
+                      .p-casting__contentListItemCont
+                        i.p-casting__contentListIcon.c-picIconPlace
+                        .p-casting__contentListName 現場でのアテンド
+      .p-page__contact
+        .p-page__inner
+          .p-page__body
+            h3.p-casting__sectName キャスティングのご依頼はこちらから
+            .p-form
+              .p-form__inner
+                form(id="inputForm")
+                  .p-form__group
+                    .p-form__head
+                      span.p-form__headTxt 希望タレント
+                      span.p-form__tag 複数選択可
+                    .p-form__input.p-form__input--checkForm
+                      label.p-form__checkBox 松本 あゆ
+                        input(type="checkbox" name="talent" value="松本 あゆ")
+                        span.c-customCheck
+                      label.p-form__checkBox 門丸 幸
+                        input(type="checkbox" name="talent" value="門丸 幸")
+                        span.c-customCheck
+                      label.p-form__checkBox 湯朝 梨乃
+                        input(type="checkbox" name="talent" value="湯朝 梨乃")
+                        span.c-customCheck
+                      label.p-form__checkBox 荒木 伸夫
+                        input(type="checkbox" name="talent" value="荒木 伸夫")
+                        span.c-customCheck
+                  .p-form__group
+                    .p-form__head
+                      span.p-form__headTxt 会社名
+                    .p-form__input
+                      input.c-formInput(type="text" id="company-name" maxlength="100" placeholder="株式会社xxxxxx")
+                  .p-form__group
+                    .p-form__head
+                      span.p-form__headTxt お名前
+                      span.p-form__tag.p-form__tag--required 入力必須
+                    .p-form__input.p-form__input--flexBox
+                      input.c-formInput(type="text" id="first-name" maxlength="100" placeholder="姓")
+                      input.c-formInput(type="text" id="last-name" maxlength="100" placeholder="名" required)
+                  .p-form__group
+                    .p-form__head
+                      span.p-form__headTxt メールアドレス
+                      span.p-form__tag.p-form__tag--required 入力必須
+                    .p-form__input
+                      input.c-formInput(type="text" id="mail" maxlength="100" placeholder="xxxx@keepsmiling.co.jp" required)
+                  .p-form__group
+                    .p-form__head
+                      span.p-form__headTxt ご連絡可能な電話番号
+                    .p-form__input
+                      input.c-formInput(type="number" id="tel" placeholder="03-0000-0000")
+                  .p-form__group
+                    .p-form__head
+                      span.p-form__headTxt お問い合わせ内容
+                    .p-form__input
+                      textarea.c-formInput.c-formInput--textarea(id="inquiry" maxlength="498" placeholder="最大1000文字まで")
+                  .p-form__group
+                    .p-form__head
+                      span.p-form__headTxt 添付ファイル
+                    .p-form__input.p-form__input--uploadBox
+                      label.c-uploadTxt(for="file_upload") ファイルを選択
+                      input.c-formUpload(type="file" id="file_upload")
+                      span.c-formUploadTxt
+                  .p-form__dtl
+                    .p-form__checkBox
+                      label.p-form__checkBoxCont
+                        a(href="#") 個人情報の取扱い
+                        | について同意する
+                        input(type="checkbox")
+                        span.c-customCheck
+                    .p-form__btn
+                      input.c-button.c-button--main(type="submit" value="同意の上、送信する")
+  include /_footer

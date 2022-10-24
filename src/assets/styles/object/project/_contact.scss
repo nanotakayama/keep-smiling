@@ -1,0 +1,142 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+.p-contact {
+  &__info {
+    font-size: 1.4rem;
+    font-weight: $font-weight-regular;
+    line-height: 180%;
+    @include mq-up(md) {
+      font-size: 1.6rem;
+    }
+    + .p-form {
+      margin-top: 40px;
+    }
+  }
+}
+
+.p-form {
+  @include mq-up(md) {
+    background-color: $color-white;
+    box-shadow: 4px 8px 24px rgba($color-black,0.08);
+    border-radius: 32px;
+  }
+  &__inner {
+    @include mq-up(md) {
+      padding: 56px 80px;
+    }
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+  &__headTxt {
+    font-size: 1.4rem;
+    font-weight: $font-weight-bold;
+    line-height: 160%;
+    color: $pjc-txt-base;
+    @include mq-up(md) {
+      font-size: 1.6rem;
+    }
+    + .p-form__tag {
+      margin-left: 12px;
+    }
+  }
+  &__tag {
+    display: inline-block;
+    font-size: 1.0rem;
+    line-height: 100%;
+    font-weight: $font-weight-bold;
+    color: #999;
+    padding: 4px 6px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    &--required {
+      border: 1px solid $pjc-accent-01;
+      color: $pjc-accent-01;
+    }
+  }
+  &__input {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    &--checkForm {
+      margin-top: 1px;
+    }
+    &--flexBox {
+      display: flex;
+      justify-content: space-between;
+      .c-formInput {
+        width: calc(50% - 4px);
+        @include mq-up(md) {
+          width: calc(50% - 6px);
+        }
+      }
+    }
+    &--uploadBox {
+      flex-direction: column;
+    }
+  }
+  &__checkBox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: calc(16px + 8px);
+    margin-top: 15px;
+    margin-right: 32px;
+  }
+  &__group {
+    + .p-form__group {
+      margin-top: 32px;
+      @include mq-up(md) {
+        margin-top: 40px;
+      }
+    }
+  }
+  &__dtl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    @include mq-up(md) {
+      margin-top: 64px;
+    }
+    .p-form__checkBox {
+      margin-top: 0;
+      margin-right: 0;
+    }
+  }
+  &__btn {
+    width: 100%;
+    margin-top: 16px;
+    @include mq-up(md) {
+      margin-top: 24px;
+    }
+    .c-button {
+      max-width: 256px;
+      height: 48px;
+      margin: 0 auto;
+      font-size: 1.4rem;
+      @include mq-up(md) {
+        max-width: 380px;
+        height: 64px;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  &__checkBoxCont {
+    font-size: 1.4rem;
+    font-weight: $font-weight-regular;
+    line-height: 160%;
+    color: $pjc-txt-base;
+    cursor: pointer;
+    .c-customCheck {
+      margin-top: 1px;
+    }
+    a {
+      color: $pjc-main-01;
+      text-decoration: underline;
+    }
+  }
+}

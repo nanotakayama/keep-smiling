@@ -1,0 +1,310 @@
+//- ---
+//- dynamicPermalink: false
+//- permalink: 'xx.html'
+//- ---
+
+extends /_layout-default
+
+prepend config-block
+  //- - site.page_name = ''
+  //- - site.description = ''
+  //- - site.keywords = ''
+  //- - site.url = ''
+
+//- append stylesheet-block
+//-   link(rel="stylesheet", href="/assets/styles/page.css")
+
+//- append javascript-block
+//-   script(src="/assets/scripts/page.js")
+
+block content-block
+  include /_header
+
+  main.l-main.l-main--front
+    .p-frontVis
+      .p-frontVis__slide
+        .p-frontVis__circle
+        .p-frontVis__bg
+          svg(width="757", height="454", viewBox="0 0 757 454", fill="none", xmlns="http://www.w3.org/2000/svg")
+            g(clip-path="url(#clip0_448_1922)")
+              path(class="st2" fill-rule="evenodd", clip-rule="evenodd", d="M9.99987 107C0.999894 142 -6.00015 226 9.99987 281.5C25.9999 337 85.9999 375 125.5 383C165 391 211.173 396.054 240.087 391.027C269 386 381.66 392.402 407.33 400.201C433 408 520.299 445.93 556.399 445.715C592.5 445.5 636.731 441.488 663 435.5C735.063 419.073 754 333.5 759 294.159C764 254.818 741.5 207 744.5 161C747.5 115 648.084 45.2658 612.5 43.5001C576.916 41.7344 519.5 50.5001 508.849 52.7305C498.198 54.9609 392.5 56 364.697 46.3989C336.894 36.7977 320.5 12.5178 245.5 6.25896C170.5 8.10623e-05 141 3.01784 103.5 6.25897C65.9999 9.5001 18.9998 72 9.99987 107Z", fill="#FDFBF4")
+                defs
+                  clippath(id="clip0_448_1922")
+                    rect(width="757", height="454", fill="white")
+        .p-frontVis__container.swiper.js-mainSwiper
+          ul.p-frontVis__wrapper.swiper-wrapper
+            li.p-frontVis__item.swiper-slide
+              a(href="#")
+                +picture({
+                  path: '/assets/images/',
+                  name: 'hero-slide_001',
+                  type: 'jpg',
+                  alt: '',
+                  width: 480,
+                  height: 360,
+                  lazy: false
+                })
+            li.p-frontVis__item.swiper-slide
+              a(href="#")
+                +picture({
+                  path: '/assets/images/',
+                  name: 'hero-slide_001',
+                  type: 'jpg',
+                  alt: '',
+                  width: 480,
+                  height: 360,
+                  lazy: false
+                })
+            li.p-frontVis__item.swiper-slide
+              a(href="#")
+                +picture({
+                  path: '/assets/images/',
+                  name: 'hero-slide_001',
+                  type: 'jpg',
+                  alt: '',
+                  width: 480,
+                  height: 360,
+                  lazy: false
+                })
+          .p-frontVis__prev.swiper-button-prev
+          .p-frontVis__next.swiper-button-next
+      .p-frontTtl Keep Smiling
+      .p-frontBanner
+        .p-banner
+          .p-banner__inner.swiper.js-bannerSwiper
+            ul.p-banner__list.swiper-wrapper
+              li.p-banner__item.swiper-slide
+                a(href="#")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-banner_001',
+                    type: 'jpg',
+                    alt: '',
+                    width: 320,
+                    height: 120,
+                    lazy: false
+                  })
+              li.p-banner__item.swiper-slide
+                a(href="#")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-banner_001',
+                    type: 'jpg',
+                    alt: '',
+                    width: 320,
+                    height: 120,
+                    lazy: false
+                  })
+              li.p-banner__item.swiper-slide
+                a(href="#")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-banner_001',
+                    type: 'jpg',
+                    alt: '',
+                    width: 320,
+                    height: 120,
+                    lazy: false
+                  })
+    section.p-sect.p-sect--front.p-sect--talentBox
+      .p-sect__talentBox
+        .p-sect__inner
+          .p-sect__name
+            h2.p-sect__nameEn Talent
+            span.p-sect__nameJp 所属タレント
+          .p-sect__talent.p-talent
+            ul.p-talent__list
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_001',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 門丸 幸
+                  .p-talent__nameEn YUKI MONMARU
+              li.p-talent__item
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_003',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 湯朝 梨乃
+                  .p-talent__nameEn RINO YUASA
+              li.p-talent__item
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_002',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 荒木 伸夫
+                  .p-talent__nameEn NOBUO ARAKI
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_003',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 門丸 幸
+                  .p-talent__nameEn YUKI MONMARU
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_003',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 荒木 伸夫
+                  .p-talent__nameEn NOBUO ARAKI
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_003',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 門丸 幸
+                  .p-talent__nameEn YUKI MONMARU
+    section.p-sect.p-sect--front
+      .p-sect__inner.p-sect__inner--newsInner
+        .p-sect__name
+          h2.p-sect__nameEn News
+          span.p-sect__nameJp お知らせ
+          a.p-sect__btn.c-button.c-button--main.c-button--more(href="/news.html")
+            .c-button__txt MORE
+        .p-sect__news.p-news
+          ul.p-news__list
+            li.p-news__item
+              a.p-news__inner(href="/news-article.html")
+                .p-news__vis
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'thum-news_001',
+                    type: 'jpg',
+                    alt: '',
+                    width: 128,
+                    height: 128,
+                    lazy: true
+                  })
+                .p-news__dtl
+                  h3.p-news__name 山田 涼介 フジテレビ「親愛なる僕へ殺意をこめて」出演
+                  .p-news__meta
+                    span.p-news__category オンエア情報
+                    time.p-news__days(datatime="2022-09-30") 2022.09.30
+            li.p-news__item
+              a.p-news__inner(href="/news-article.html")
+                .p-news__vis
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'thum-news_002',
+                    type: 'jpg',
+                    alt: '',
+                    width: 128,
+                    height: 128,
+                    lazy: true
+                  })
+                .p-news__dtl
+                  h3.p-news__name 山田 涼介 映画「鋼の錬金術師 完結編」出演
+                  .p-news__meta
+                    span.p-news__category オンエア情報
+                    time.p-news__days(datatime="2022-09-30") 2022.09.30
+            li.p-news__item
+              a.p-news__inner(href="/news-article.html")
+                .p-news__vis
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'thum-news_003',
+                    type: 'jpg',
+                    alt: '',
+                    width: 128,
+                    height: 128,
+                    lazy: true
+                  })
+                .p-news__dtl
+                  h3.p-news__name 臨時休業のお知らせ
+                  .p-news__meta
+                    span.p-news__category その他
+                    time.p-news__days(datatime="2022-09-30") 2022.09.30
+          a.p-news__btn.c-button.c-button--main.c-button--more(href="/news.html")
+            .c-button__txt MORE
+    section.p-sect.p-sect--front.p-sect--aboutBox#company
+      .p-sectBg.p-sectBg--left
+        svg(width="130", height="729", viewBox="0 0 130 729", fill="none", xmlns="http://www.w3.org/2000/svg")
+          g(clip-path="url(#clip0_24_801)")
+            path(class="st0" d="M39.5 47.5C39.5 47.5 24.5001 28 5.04243 6.60723C-14.4152 -14.7855 -258.134 -102.199 -340.149 16.9808L-356.273 40.4104C-387.429 85.6847 -401.731 140.447 -396.691 195.174L-396.691 792C-379.519 978.492 6.75405 724.653 17.877 717.577C29 710.5 42.5 702 61.5 681C80.5 660 101.5 543 92.5 485.5C83.5 428 43.6849 400.5 58.9672 348.12C74.2494 295.74 22.3542 245.171 46.5118 196.055C71.6673 144.909 74.5728 92.4284 39.5 47.5Z", fill="#467AFF")
+              defs
+                clippath(id="clip0_24_801")
+                  rect(width="130", height="729", fill="white")
+      .p-sectBg.p-sectBg--right
+        svg(width="185", height="509", viewBox="0 0 185 509", fill="none", xmlns="http://www.w3.org/2000/svg")
+          g(clip-path="url(#clip0_24_803)")
+            path(class="st1" d="M182.825 507.432C215.575 528.216 206.405 522.396 206.405 522.396C289.534 575.151 399.971 531.995 425.305 436.855L430.286 418.152C439.91 382.01 436.562 343.638 420.824 309.709L321.981 96.6152C268.351 -19.0033 104.5 21.5 77.5 35.5C50.5 49.5 29.3685 78.4 29.3685 78.4C-21.3322 149.039 2.49997 248 47 283.5C91.5 319 102 325.5 112.5 334C123 342.5 140.786 373.431 136.526 410.436C132.09 448.97 150.075 486.648 182.825 507.432Z", fill="#467AFF")
+              defs
+                clippath(id="clip0_24_803")
+                  rect(width="185", height="509", fill="white")
+      .p-sect__inner
+        .p-sect__wrap
+          .p-sect__name.p-sect__name--center
+            h2.p-sect__nameEn About Us
+            span.p-sect__nameJp 会社概要
+        .p-about
+          ul.p-about__list
+            li.p-about__item
+              span.p-about__label 社名
+              .p-about__name 有限会社 キープスマイリング
+            li.p-about__item
+              span.p-about__label 設立
+              .p-about__name 平成9年（1997）4月21日
+            li.p-about__item
+              span.p-about__label 所在地
+              .p-about__name 
+                | 〒145-0066
+                br
+                | 東京都大田区南雪谷3-1-8
+            li.p-about__item
+              span.p-about__label 電話番号
+              a(href="tel:036429300").p-about__name 
+                | 03-6425-9300
+            li.p-about__item
+              span.p-about__label 代表取締役
+              .p-about__name 市瀬 剛
+          a.p-about__btn.c-button.c-button--primary.c-button--mail(href="/contact.html")
+            .c-button__txt 出演依頼・お問い合わせ
+  include /_footer

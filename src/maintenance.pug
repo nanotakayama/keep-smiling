@@ -1,0 +1,39 @@
+---
+dynamicPermalink: false
+permalink: 'maintenance.html'
+---
+
+extends /_layout-default
+
+prepend config-block
+  - site.page_name = 'メンテナンス'
+  //- - site.description = ''
+  //- - site.keywords = ''
+  //- - site.url = ''
+
+//- append stylesheet-block
+//-   link(rel="stylesheet", href="/assets/styles/page.css")
+
+//- append javascript-block
+//-   script(src="/assets/scripts/page.js")
+
+block content-block
+  main.l-main.l-main--bgBlock
+    .p-maintenance
+      .p-maintenance__logo
+        img(src="../assets/images/logo-brand-keepsmiling.svg" alt="keepsmiling")
+      .p-maintenance__txt
+        | ただいまサイトリニューアル中です。
+        br
+        | お問い合わせは以下よりお願い申し上げます。
+      .p-maintenance__contact
+        .p-maintenance__contactItem
+          .p-maintenance__contactIcon.c-picIconMail-gray
+          .p-maintenance__contactTxt
+            a(href="mailto:official@keepsmiling.co.jp") official@keepsmiling.co.jp
+        .p-maintenance__contactItem
+          .p-maintenance__contactIcon.c-picIconPhone-gray
+          .p-maintenance__contactTxt
+            a(href="tel:03-6425-9300") 03-6425-9300
+  .p-maintenanceFoot
+    small Copyright © KEEP Smiling, All Rights Reserved.

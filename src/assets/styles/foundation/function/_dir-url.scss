@@ -1,0 +1,13 @@
+@use '../variable/variable' as *;
+
+@function img_url($url) {
+  @return url('#{$dir-img-base}#{$url}');
+}
+
+/* Usage Examples/
+
+.logo {
+  background-image: img_url('logo.svg');
+}
+
+*/

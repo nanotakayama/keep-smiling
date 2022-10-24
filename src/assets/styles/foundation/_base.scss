@@ -1,0 +1,194 @@
+@use '../global' as *;
+@use 'keyframe' as *;
+@use "vendor" as *;
+
+// @use 'sass:color';
+// @use 'sass:list';
+// @use 'sass:map';
+// @use 'sass:math';
+// @use 'sass:meta';
+// @use 'sass:selector';
+// @use 'sass:string';
+
+// :root {
+//   --scrollbar-gap: 0px;
+// }
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  // @media (prefers-reduced-motion: reduce) {
+  //   animation: 1ms !important;
+  //   scroll-behavior: auto !important;
+  //   transition: 1ms !important;
+  // }
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%; // 10px
+  -webkit-tap-highlight-color: transparent;
+  // -webkit-font-smoothing: subpixel-antialiased;
+  // -moz-osx-font-smoothing: auto;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  padding: 0;
+  word-break: break-all;
+  font-family: $font-family-base;
+  line-height: 1.8;
+  color: $color-black;
+  font-size: $font-size-sp-base;
+  @include mq-up(md) {
+    font-size: $font-size-pc-base;
+  }
+  &.is-fixed {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  font-weight: inherit;
+}
+
+h1 {
+  margin: 0;
+}
+
+i,
+cite,
+em,
+address,
+dfn {
+  [lang='ja'] & {
+    font-style: normal;
+  }
+}
+
+small {
+  font-size: 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+iframe {
+  border-style: none;
+}
+
+input[type='text'] {
+  line-height: normal;
+}
+
+[type='text']::-ms-clear {
+  visibility: hidden;
+}
+
+[type='password']::-ms-reveal {
+  visibility: hidden;
+}
+
+[type='number']::-webkit-outer-spin-button,
+[type='number']::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+}
+
+fieldset {
+  border: 0;
+  min-width: auto;
+  padding: 0;
+}
+
+legend {
+  display: block;
+}
+
+[tabindex='-1']:focus {
+  outline: none !important;
+}
+
+[aria-busy='true'] {
+  cursor: progress;
+}
+
+[aria-disabled='true'],
+[disabled] {
+  cursor: not-allowed;
+}
+
+[inert] {
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+[inert],
+[inert] * {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+[hidden] {
+  display: none !important;
+}

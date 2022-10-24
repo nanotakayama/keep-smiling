@@ -1,0 +1,121 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+[class^="c-picIcon"],
+[class*=" c-picIcon"] {
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+  &:before,
+  &:after {
+      display: inline-block;
+      content: "";
+      width: 1em;
+      height: 1em;
+  }
+  &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+  }
+}
+
+.c-picIconArrow {
+  &:before {
+    background: img-url("icon-arrow.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-arrow.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconMail-gray {
+  &:before {
+    background: img-url("icon-mail_gray.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-mail_gray.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconPhone-gray {
+  &:before {
+    background: img-url("icon-phone_gray.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-phone_gray.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconTwitter {
+  &:before {
+    background: img-url("icon-twitter.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-twitter.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconTwitter-white {
+  &:before {
+    background: img-url("icon-twitter_white.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-twitter_white.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconInstagram {
+  &:before {
+    background: img-url("icon-Instagram.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-Instagram.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconInstagram-white {
+  &:before {
+    background: img-url("icon-Instagram_white.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-Instagram_white.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconLight {
+  &:before {
+    background: img-url("icon-light.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-light.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconPresentation {
+  &:before {
+    background: img-url("icon-presentation.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-presentation.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconNegotiation {
+  &:before {
+    background: img-url("icon-negotiation.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-negotiation.svg") no-repeat center / contain;
+  }
+}
+
+.c-picIconPlace {
+  &:before {
+    background: img-url("icon-place.svg") no-repeat center / contain;
+  }
+  &:after {
+    background: img-url("icon-place.svg") no-repeat center / contain;
+  }
+}

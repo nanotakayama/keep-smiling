@@ -1,0 +1,103 @@
+---
+dynamicPermalink: false
+permalink: 'news.html'
+---
+
+extends /_layout-default
+
+prepend config-block
+  - site.page_name = 'ニュース'
+  //- - site.description = ''
+  //- - site.keywords = ''
+  //- - site.url = ''
+
+//- append stylesheet-block
+//-   link(rel="stylesheet", href="/assets/styles/page.css")
+
+//- append javascript-block
+//-   script(src="/assets/scripts/page.js")
+
+block content-block
+  include /_header
+  main.l-main
+    include /_childBg
+    .p-page
+      .p-page__inner
+        .p-page__name
+          h2.p-page__nameEn News
+          .p-page__nameJp お知らせ
+        .p-page__body
+          .p-news
+            .c-category
+              ul.c-category__list
+                li.c-category__listItem.is-active すべて
+                li.c-category__listItem オンエア情報
+                li.c-category__listItem 掲載情報
+                li.c-category__listItem イベント情報
+                li.c-category__listItem その他
+            ul.p-news__list
+              li.p-news__item
+                a.p-news__inner(href="/news-article.html")
+                  .p-news__vis
+                    +picture({
+                      path: '/assets/images/',
+                      name: 'thum-news_001',
+                      type: 'jpg',
+                      alt: '',
+                      width: 128,
+                      height: 128,
+                      lazy: true
+                    })
+                  .p-news__dtl
+                    h3.p-news__name 山田 涼介 フジテレビ「親愛なる僕へ殺意をこめて」出演
+                    .p-news__meta
+                      span.p-news__category オンエア情報
+                      time.p-news__days(datatime="2022-09-30") 2022.09.30
+              li.p-news__item
+                a.p-news__inner(href="/news-article.html")
+                  .p-news__vis
+                    +picture({
+                      path: '/assets/images/',
+                      name: 'thum-news_002',
+                      type: 'jpg',
+                      alt: '',
+                      width: 128,
+                      height: 128,
+                      lazy: true
+                    })
+                  .p-news__dtl
+                    h3.p-news__name 山田 涼介 映画「鋼の錬金術師 完結編」出演
+                    .p-news__meta
+                      span.p-news__category オンエア情報
+                      time.p-news__days(datatime="2022-09-30") 2022.09.30
+              li.p-news__item
+                a.p-news__inner(href="/news-article.html")
+                  .p-news__vis
+                    +picture({
+                      path: '/assets/images/',
+                      name: 'thum-news_003',
+                      type: 'jpg',
+                      alt: '',
+                      width: 128,
+                      height: 128,
+                      lazy: true
+                    })
+                  .p-news__dtl
+                    h3.p-news__name 臨時休業のお知らせ
+                    .p-news__meta
+                      span.p-news__category その他
+                      time.p-news__days(datatime="2022-09-30") 2022.09.30
+            .p-news__pager.p-pager
+              a.p-pagerBtn.p-pagerBtn--prev(href="#")
+              .p-pagerNum
+                a.p-pagerBtn(href="#") 1
+                a.p-pagerBtn(href="#") 2
+                a.p-pagerBtn(href="#") 3
+                span ...
+                a.p-pagerBtn(href="#").is-active 7
+                span ...
+                a.p-pagerBtn(href="#") 19
+                a.p-pagerBtn(href="#") 20
+                a.p-pagerBtn(href="#") 21
+              a.p-pagerBtn.p-pagerBtn--next(href="#")
+  include /_footer

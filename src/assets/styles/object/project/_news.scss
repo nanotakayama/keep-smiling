@@ -1,0 +1,117 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+.p-news {
+  width: 100%;
+  &__item {
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid #eee;
+    transition: .6s cubic-bezier(0.18, 0.71, 0.7, 0.93);
+    @include mq-up(md) {
+      border-top: 0;
+      background-color: $color-white;
+      box-shadow: 4px 8px 24px rgba($color-black,0.08);
+      border-radius: 12px;
+      padding: 0;
+    }
+    &:first-child {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
+    @include hover {
+      transform: scale(1.04);
+    }
+  }
+  &__inner {
+    display: flex;
+  }
+  &__vis {
+    position: relative;
+    width: 96px;
+    min-width: 96px;
+    height: 96px;
+    @include mq-up(md) {
+      width: 128px;
+      min-width: 128px;
+      height: 128px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      @include mq-up(md) {
+        border-radius: 12px 0 0 12px;
+      }
+    }
+  }
+  &__dtl {
+    width: 100%;
+    padding-left: 16px;
+    margin-top: 11px;
+    position: relative;
+    @include mq-up(md) {
+      padding: 24px;
+      margin: 0;
+    }
+    @include mq-up(lg) {
+      padding: 32px;
+    }
+  }
+  &__name {
+    font-size: 1.4rem;
+    font-weight: $font-weight-bold;
+    line-height: 160%;
+    color: $color-black;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  &__category {
+    font-size: 1.4rem;
+    font-weight: $font-weight-bold;
+    line-height: 160%;
+    color: #666;
+  }
+  &__days {
+    font-size: 1.4rem;
+    font-weight: $font-weight-bold;
+    line-height: 160%;
+    color: #999;
+  }
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    position: absolute;
+    right: 0;
+    left: 16px;
+    bottom: 11px;
+    @include mq-up(md) {
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+    }
+    @include mq-up(lg) {
+      left: 32px;
+      right: 32px;
+      bottom: 32px;
+    }
+  }
+  &__btn {
+    margin: 0 auto;
+    margin-top: 32px;
+    @include mq-up(md) {
+      display: none;
+    }
+  }
+  &__pager {
+    margin-top: 32px;
+    @include mq-up(md) {
+      margin-top: 64px;
+    }
+  }
+}

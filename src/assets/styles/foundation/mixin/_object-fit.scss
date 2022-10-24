@@ -1,0 +1,25 @@
+@mixin object-fit($value: fill, $position: null) {
+  object-fit: $value;
+  @if $position {
+    object-position: $position;
+    font-family: 'object-fit: #{$value}; object-position: #{$position}', sans-serif;
+  }
+  @else {
+    font-family: 'object-fit: #{$value}', sans-serif;
+  }
+}
+
+// Usage Examples
+// -----------------
+
+// Polyfill
+// https://github.com/fregante/object-fit-images
+
+// .photo {
+//   &--image1 {
+//     @include object-fit(cover);
+//   }
+//   &--image2 {
+//     @include object-fit(contain, top center);
+//   }
+// }

@@ -1,0 +1,304 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+.p-talent {
+  width: 100%;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -4px;
+    margin-top: -24px;
+    @include mq-up(md) {
+      margin: 0 -12px;
+      margin-top: -40px;
+    }
+  }
+  &__item {
+    width: 50%;
+    padding: 0 4px;
+    position: relative;
+    margin-top: 24px;
+    @include mq-up(md) {
+      margin-top: 40px;
+      width: calc(100% / 2);
+      padding: 0 12px;
+    }
+    @include mq-up(lg) {
+      width: calc(100% / 3);
+    }
+  }
+  &__vis {
+    display: block;
+    position: relative;
+    width: 100%;
+    @include aspect-ratio(175, 116);
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 12px;
+    @include mq-up(md) {
+      margin-top: 0;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .6s cubic-bezier(0.18, 0.71, 0.7, 0.93);
+    }
+    @include hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__category {
+    display: inline-block;
+    font-size: 1.0rem;
+    font-weight: $font-weight-bold;
+    line-height: 100%;
+    color: $color-black;
+    background-color: $color-white;
+    padding: 3px 9px;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    @include mq-up(md) {
+      font-size: 1.2rem;
+      padding: 6px 18px;
+      position: absolute;
+      top: 12px;
+      right: 24px;
+      z-index: 1;
+    }
+  }
+  &__name {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 4px;
+    @include mq-up(md) {
+      margin-top: 16px;
+    }
+  }
+  &__nameJp {
+    font-size: 1.6rem;
+    font-weight: $font-weight-regular;
+    line-height: 140%;
+    @include mq-up(md) {
+      font-size: 2.4rem;
+    }
+  }
+  &__nameEn {
+    font-size: 1.0rem;
+    font-weight: $font-weight-regular;
+    letter-spacing: 0.04em;
+    line-height: 140%;
+    color: #DDDDDD;
+    @include mq-up(md) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.p-talentProf {
+  width: 100%;
+  @include mq-up(lg) {
+    display: flex;
+    align-items: flex-start;
+  }
+  &__dtl {
+    width: 100%;
+    margin-top: 16px;
+    @include mq-up(lg) {
+      padding-left: 48px;
+      margin-top: 0;
+    }
+  }
+  &__name {
+    margin-top: 8px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 12px;
+    @include mq-up(md) {
+      margin-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+  &__vis {
+    height: 400px;
+    margin: 0 -16px;
+    @include mq-up(md) {
+      width: 100%;
+      margin: 0;
+    }
+    @include mq-up(lg) {
+      width: 400px;
+      min-width: 400px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include mq-up(md) {
+        border-radius: 24px;
+        box-shadow: 4px 8px 24px rgba($color-black,0.08);
+      }
+    }
+  }
+  &__category {
+    width: 88px;
+    height: 16px;
+    font-size: 1.0rem;
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    line-height: 100%;
+    background-color: $pjc-main-01;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include mq-up(md) {
+      width: 120px;
+      height: 24px;
+      font-size: 1.2rem;
+    }
+  }
+  &__name {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__nameJp {
+    font-size: 2.4rem;
+    line-height: 160%;
+    font-weight: $font-weight-bold;
+    @include mq-up(md) {
+      font-size: 3.2rem;
+    }
+  }
+  &__nameEn {
+    font-size: 2.0rem;
+    line-height: 140%;
+    font-weight: $font-weight-regular;
+    color: #999;
+    letter-spacing: 0.04em;
+  }
+  &__share {
+    margin-top: 16px;
+    @include mq-up(md) {
+      margin-top: 24px;
+    }
+    &Btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      transition: all 1.0s cubic-bezier(.19,1,.22,1);
+      &--twitter {
+        background-color: #1D9BF0;
+        border: 1px solid #1D9BF0;
+        @include hover {
+          background-color: $color-white;
+          .p-talentProf__shareBtnIcon {
+            &:before {
+              background: img-url("icon-twitter.svg") no-repeat center / contain;
+            }
+          }
+        }
+      }
+      &--instagram {
+        background-color: $color-white;
+        border: 1px solid #ddd;
+        @include hover {
+          background-color: #CF2E92;
+          border: 1px solid #CF2E92;
+          .p-talentProf__shareBtnIcon {
+            &:before {
+              background: img-url("icon-Instagram_white.svg") no-repeat center / contain;
+            }
+          }
+        }
+      }
+      +.p-talentProf__shareBtn {
+        margin-left: 12px;
+      }
+    }
+    &BtnIcon {
+      font-size: 2.8rem;
+      &:before {
+        transition: all 1.0s cubic-bezier(.19,1,.22,1);
+      }
+    }
+  }
+  &__spec {
+    margin-top: 16px;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    border-collapse: initial;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    @include mq-up(md) {
+      margin-top: 24px;
+    }
+    &Wrap {
+      border-bottom: 1px solid #ddd;
+      &:last-child {
+        .p-talentProf__specHead,
+        .p-talentProf__specDtl {
+          border-bottom-width: 0;
+        }
+      }
+    }
+    &Head {
+      width: 80px;
+      min-width: 80px;
+      background-color: #eee;
+      font-size: 1.2rem;
+      font-weight: $font-weight-regular;
+      line-height: 180%;
+      padding: 12px 16px;
+      text-align: left;
+      color: #666;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      white-space: nowrap;
+      @include mq-up(md) {
+        width: 104px;
+        min-width: 104px;
+        font-size: 1.4rem;
+        padding: 12px 24px;
+      }
+    }
+    &Dtl {
+      width: 100%;
+      background-color: $color-white;
+      font-size: 1.2rem;
+      line-height: 180%;
+      font-weight: $font-weight-regular;
+      color: $pjc-txt-base;
+      padding: 12px 16px;
+      border-bottom: 1px solid #ddd;
+      @include mq-up(md) {
+        font-size: 1.4rem;
+        padding: 12px 24px;
+      }
+    }
+  }
+}
+
+.p-talentSect {
+  margin-top: 56px;
+  @include mq-up(md) {
+    margin-top: 80px;
+  }
+  .p-news__btn {
+    display: none;
+  }
+}

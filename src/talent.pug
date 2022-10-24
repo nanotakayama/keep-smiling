@@ -1,0 +1,130 @@
+---
+dynamicPermalink: false
+permalink: 'talent.html'
+---
+
+extends /_layout-default
+
+prepend config-block
+  - site.page_name = '所属タレント'
+  //- - site.description = ''
+  //- - site.keywords = ''
+  //- - site.url = ''
+
+//- append stylesheet-block
+//-   link(rel="stylesheet", href="/assets/styles/page.css")
+
+//- append javascript-block
+//-   script(src="/assets/scripts/page.js")
+
+block content-block
+  include /_header
+  main.l-main
+    include /_childBg
+    .p-page
+      .p-page__inner
+        .p-page__name
+          h2.p-page__nameEn Talent
+          .p-page__nameJp 所属タレント
+        .p-page__body.p-page__body--bigSize
+          .p-talent
+            .c-category
+              ul.c-category__list.c-category__list--center
+                li.c-category__listItem.is-active すべて
+                li.c-category__listItem Model/Talent
+                li.c-category__listItem Artist
+                li.c-category__listItem Youtuber
+                li.c-category__listItem その他
+            ul.p-talent__list
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_001',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 門丸 幸
+                  .p-talent__nameEn YUKI MONMARU
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_003',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 湯朝 梨乃
+                  .p-talent__nameEn RINO YUASA
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_002',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 荒木 伸夫
+                  .p-talent__nameEn NOBUO ARAKI
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_003',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 門丸 幸
+                  .p-talent__nameEn YUKI MONMARU
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_003',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 荒木 伸夫
+                  .p-talent__nameEn NOBUO ARAKI
+              li.p-talent__item
+                span.p-talent__category Model / Talent
+                a.p-talent__vis(href="/talent-article.html")
+                  +picture({
+                    path: '/assets/images/',
+                    name: 'img-prof_003',
+                    type: 'jpg',
+                    alt: '',
+                    width: 309,
+                    height: 206,
+                    lazy: true
+                  })
+                .p-talent__name
+                  h3.p-talent__nameJp 門丸 幸
+                  .p-talent__nameEn YUKI MONMARU
+
+  include /_footer

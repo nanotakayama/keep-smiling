@@ -1,0 +1,73 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+.p-about {
+  width: 100%;
+  @include mq-up(md) {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  &__list {
+    margin-top: 24px;
+    @include mq-up(md) {
+      margin-top: 48px;
+      position: relative;
+      z-index: 1;
+      mix-blend-mode: multiply;
+    }
+  }
+  &__item {
+    padding: 16px 8px;
+    border-top: 1px solid #eee;
+    @include mq-up(md) {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+    @include mq-up(md) {
+      &:first-child {
+        border-top: 0;
+      }
+    }
+  }
+  &__label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: $font-weight-regular;
+    line-height: 160%;
+    color: #666;
+    @include mq-up(md) {
+      width: calc(80px / 720px * 100%);
+      font-size: 1.5rem;
+      white-space: nowrap;
+    }
+  }
+  &__name {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: $font-weight-regular;
+    line-height: 160%;
+    color: $color-black;
+    margin-top: 8px;
+    @include mq-up(md) {
+      width: calc(645px / 720px * 100%);
+      padding-left: 40px;
+      margin-top: 0;
+    }
+  }
+  &__btn {
+    margin: 0 auto;
+    margin-top: 32px;
+    @include mq-up(md) {
+      max-width: 320px;
+    }
+    .c-button__txt:before {
+      @include mq-up(md) {
+        margin-right: 12px;
+      }
+    }
+  }
+}

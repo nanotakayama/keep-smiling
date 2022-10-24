@@ -1,0 +1,55 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+.p-sectBg {
+  position: absolute;
+  display: none;
+  @include mq-up(md) {
+    display: block;
+  }
+  &--left {
+    left: 0;
+    top: 175px;
+  }
+  &--right {
+    right: 0;
+    top: 310px;
+  }
+}
+
+.c-bgChild {
+  position: absolute;
+  z-index: -1;
+  &--left {
+    left: 0;
+    top: 62px;
+    @include mq-up(md) {
+      top: 83px;
+    }
+    svg {
+      width: 103px;
+      height: auto;
+      @include mq-up(md) {
+        width: auto;
+      }
+    }
+  }
+  &--right {
+    right: 0;
+    top: 76px;
+    @include mq-up(md) {
+      top: 111px;
+    }
+    svg {
+      width: 132px;
+      height: auto;
+      @include mq-up(md) {
+        width: auto;
+      }
+      path[fill-rule=evenodd] {
+        position: relative;
+        top: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+.c-category {
+  white-space: nowrap;
+  margin-bottom: 24px;
+  margin-right: -16px;
+  margin-left: -16px;
+  @include mq-up(md) {
+    white-space: inherit;
+    margin-bottom: 48px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    @include mq-up(md) {
+      flex-wrap: wrap;
+      margin-top: -8px;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &--center {
+      @include mq-up(md) {
+        justify-content: center;
+      }
+    }
+    &Item {
+      color: $pjc-main-01;
+      font-size: 1.3rem;
+      font-weight: $font-weight-bold;
+      line-height: 100%;
+      padding: 12px 24px;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-right: 4px;
+      background-color: $color-white;
+      transition: all .8s cubic-bezier(.19,1,.22,1);
+      // box-shadow: 4px 8px 24px rgba($color-black,0.08);
+      @include mq-up(md) {
+        font-size: 1.6rem;
+        margin-top: 8px;
+        margin-right: 8px;
+      }
+      &.is-active {
+        background-color: $pjc-main-01;
+        color: #FDFBF4;
+        border: 1px solid $pjc-main-01;
+        pointer-events: none;
+      }
+      &:first-child {
+        margin-left: 16px;
+        @include mq-up(md) {
+          margin-left: 0;
+        }
+      }
+      &:last-child {
+        margin-right: 16px;
+        @include mq-up(md) {
+          margin-right: 0;
+        }
+      }
+      @include hover {
+        background-color: $pjc-main-01;
+        color: #FDFBF4;
+        border: 1px solid $pjc-main-01;
+      }
+    }
+  }
+}

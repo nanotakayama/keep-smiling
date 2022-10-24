@@ -1,0 +1,77 @@
+@use '../global' as *;
+
+.l-main {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 96px;
+  overflow: hidden;
+  @include mq-up(md) {
+    padding-top: 128px;
+    padding-bottom: 160px;
+    margin-bottom: -24px;
+  }
+  &--front {
+    padding-bottom: 96px;
+    @include mq-up(md) {
+      padding-bottom: 220px;
+    }
+  }
+  &--bgBlock {
+    width: 100%;
+    height: 100vh;
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    } 
+    &:before {
+      background-image: img-url("img-bg-block_01_sp.png");
+      top: 66px;
+      left: 0;
+      max-width: 102px;
+      height: 291px;
+      @include mq-up(md) {
+        background-image: img-url("img-bg-block_01_pc.png");
+        top: 83px;
+        max-width: 188px;
+        height: 445px;
+      }
+    }
+    &:after {
+      background-image: img-url("img-bg-block_02_sp.png");
+      top: 74px;
+      right: 0;
+      max-width: 96px;
+      height: 219px;
+      @include mq-up(md) {
+        background-image: img-url("img-bg-block_02_pc.png");
+        top: 113px;
+        max-width: 386px;
+        height: 526px;
+      }
+    }
+  }
+}
+
+.l-header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  @include mq-up(md) {
+    height: 128px;
+  }
+}
+
+.l-footer {
+  width: 100%;
+  height: 100%;
+}

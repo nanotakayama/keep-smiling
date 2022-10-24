@@ -1,0 +1,104 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+.c-button {
+  width: 100%;
+  max-width: 280px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  font-size: 1.6rem;
+  font-weight: $font-weight-bold;
+  line-height: 160%;
+  cursor: pointer;
+  transition: all .8s cubic-bezier(.19,1,.22,1);
+  &--main {
+    color: $color-white;
+    background-color: $pjc-main-01;
+    border: 1px solid $pjc-main-01;
+    @include hover {
+      background-color: $color-white;
+      color: $pjc-main-01;
+    }
+  }
+  &--line {
+    border: 1px solid $color-white;
+  }
+  &--primary {
+    color: $color-white;
+    background-color: $pjc-accent-01;
+    border: 1px solid $pjc-accent-01;
+    @include hover {
+      background-color: $color-white;
+      color: $pjc-accent-01;
+    }
+  }
+  &--more {
+    .c-button__txt {
+      display: flex;
+      align-items: center;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: img-url("icon-more_white.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-right: 8px;
+        transition: all .8s cubic-bezier(.19,1,.22,1);
+      }
+    }
+    @include hover {
+      .c-button__txt:before {
+        background-image: url(../images/icon-more.svg);
+      }
+    }
+  }
+  &--mail {
+    .c-button__txt {
+      display: flex;
+      align-items: center;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: img-url("icon-mail_white.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-right: 8px;
+        transition: all .8s cubic-bezier(.19,1,.22,1);
+      }
+    }
+    @include hover {
+      .c-button__txt:before {
+        background-image: url(../images/icon-mail_primary.svg);
+      }
+    }
+  }
+  &--map {
+    .c-button__txt {
+      display: flex;
+      align-items: center;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: img-url("icon-map_white.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-right: 8px;
+        transition: all .8s cubic-bezier(.19,1,.22,1);
+      }
+    }
+    @include hover {
+      .c-button__txt:before {
+        background-image: url(../images/icon-map.svg);
+      }
+    }
+  }
+}

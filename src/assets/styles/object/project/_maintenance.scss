@@ -1,0 +1,81 @@
+@use '../../global' as *;
+@use 'sass:math';
+
+.p-maintenance {
+  margin-top: 80px;
+  text-align: center;
+  @include mq-up(md) {
+    margin-top: 128px;
+  }
+  &__logo {
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+    img {
+      width: 176px;
+      @include mq-up(md) {
+        width: 240px;
+      }
+    }
+  }
+  &__txt {
+    font-size: 1.5rem;
+    font-weight: 180%;
+    margin-top: 40px;
+    color: $color-black;
+    font-weight: $font-weight-bold;
+    @include mq-up(md) {
+      margin-top: 56px;
+      font-size: 1.8rem;
+    }
+  }
+  &__contact {
+    margin-top: 40px;
+    @include mq-up(md) {
+      margin-top: 64px;
+    }
+  }
+  &__contactItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 100%;
+    + .p-maintenance__contactItem {
+      margin-top: 24px;
+      @include mq-up(md) {
+        margin-top: 40px;
+      }
+    }
+  }
+  &__contactIcon {
+    font-size: 2.0rem;
+    margin-right: 8px;
+    @include mq-up(md) {
+      font-size: 3.2rem;
+      margin-right: 12px;
+    }
+  }
+  &__contactTxt {
+    font-size: 1.8rem;
+    font-weight: 100%;
+    color: $color-black;
+    font-family: $font-family-en;
+    font-weight: $font-weight-bold;
+    @include mq-up(md) {
+      font-size: 3.2rem;
+    }
+  }
+}
+
+.p-maintenanceFoot {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  font-family: $font-family-en;
+  font-size: 1.2rem;
+  font-weight: $font-weight-regular;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}

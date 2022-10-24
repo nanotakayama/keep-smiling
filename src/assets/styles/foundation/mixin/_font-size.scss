@@ -1,0 +1,28 @@
+@use '../variable/variable' as *;
+@use '../function/get-vw' as *;
+@use './media' as *;
+
+@mixin fz($sp, $pc) {
+  $spRem: unquote($sp * 0.1 + 'rem');
+  $pcRem: unquote($pc * 0.1 + 'rem');
+  font-size: clamp(#{$spRem}, #{get_vwSP($sp)}, #{$pcRem});
+  @include mq-up(md) {
+    font-size: clamp(#{$spRem}, #{get_vwPC($pc)}, #{$maxRem});
+  }
+}
+
+@mixin fz-camp($sp, $pc) {
+  font-size: get_vwSP($sp);
+  @include mq-up(md) {
+    font-size: get_vwPC($pc);
+  }
+}
+
+// Usage Examples
+// -----------------
+// .txt {
+//   @include fz(12, 16);
+// }
+// .txt {
+//   @include fz-camp(12, 16);
+// }

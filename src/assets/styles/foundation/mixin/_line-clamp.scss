@@ -1,0 +1,19 @@
+@mixin line-clamp($count: 2) {
+  @if $count == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $count;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Usage Examples
+// -----------------
+
+// .bar {
+//   @include line-clamp(4);
+// }
